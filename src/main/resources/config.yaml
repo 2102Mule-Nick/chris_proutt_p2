@@ -1,0 +1,11 @@
+http:
+  port: "8081"
+
+#American info
+american:
+  host: "localhost"
+  port: "80"
+  basepath: "/"
+  protocol: "HTTP"
+  client_id: "77acf40220c14731b35cc3b6fb9443af"
+  client_secret: "6bB05675EcA249d197b1E9756818cD31"

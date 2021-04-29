@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:american-flights-api="http://www.mulesoft.org/schema/mule/american-flights-api"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/american-flights-api http://www.mulesoft.org/schema/mule/american-flights-api/current/mule-american-flights-api.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<american-flights-api:config name="American_Flights_API_Config" doc:name="American Flights API Config" doc:id="5020a82d-1dc2-4edf-8b47-f1ca4a79fd46" property_host="${american.host}" property_port="${american.port}" property_protocol="${american.protocol}" property_basePath="${american.basepath}" />
+	<db:config name="Database_Config1" doc:name="Database Config" doc:id="2eb148fe-a5b8-4f89-b398-61a61260ed35" >
+		<db:generic-connection driverClassName="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/americanFlights" user="postgres" password="Pas$wor12020"/>
+	</db:config>
+	<configuration-properties doc:name="Configuration properties" doc:id="2a34d19e-cf12-4c29-a539-74d98c6f9bd1" file="config.yaml" />
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="044e4836-6d54-47e9-a87c-7953c4aa5c4f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+</mule>
